@@ -16,5 +16,6 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"message": "Hello, World!"})
 	})
 
+	// port 8080
 	r.Run(":8080")
 }
