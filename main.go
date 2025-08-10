@@ -17,6 +17,11 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"message": "Hello, World!"})
 	})
 
+	// health check route
+	r.GET("/health", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"status": "healthy"})
+	})
+
 	// port 8080
 	r.Run(":8080")
 }
