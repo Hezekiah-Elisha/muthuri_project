@@ -12,6 +12,7 @@ func main() {
 	r := gin.New()
 	r.Use(gin.Recovery())
 
+	// main route
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"message": "Hello, World!"})
 	})
