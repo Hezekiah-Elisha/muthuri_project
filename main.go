@@ -1,6 +1,10 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	gin.SetMode(gin.ReleaseMode)
@@ -9,7 +13,7 @@ func main() {
 	r.Use(gin.Recovery())
 
 	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{"message": "Hello, World!"})
+		c.JSON(http.StatusOK, gin.H{"message": "Hello, World!"})
 	})
 
 	r.Run(":8080")
