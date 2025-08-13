@@ -22,6 +22,10 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"status": "healthy"})
 	})
 
+	r.GET("/here", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"message": "You are here!"})
+	})
+
 	// port 8080
 	r.Run(":8080")
 }
